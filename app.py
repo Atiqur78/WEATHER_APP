@@ -20,7 +20,8 @@ def weather():
     }
     response = requests.get(url, params= param)
     data= response.json()
-    return f"data :{data}"
+    temp=data["main"]
+    return f"data :{temp}"
 
 if __name__=='__main__':
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=5002)
